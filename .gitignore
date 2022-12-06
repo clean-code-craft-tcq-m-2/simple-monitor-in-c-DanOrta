@@ -1,1 +1,5 @@
 testchecker
+*.o
+*.exe
+*.out
+.vscode
