@@ -3,3 +3,4 @@ testchecker
 *.exe
 *.out
 .vscode
+*.stackdump
