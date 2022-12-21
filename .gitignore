@@ -4,3 +4,4 @@ testchecker
 *.out
 .vscode
 *.stackdump
+*.swp

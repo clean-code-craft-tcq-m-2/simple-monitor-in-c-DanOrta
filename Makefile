@@ -4,7 +4,7 @@ CFLAGS := -Wall \
 		-Werror \
 		-Wno-unused \
 		-O3
-CFILES := %.c
+CFILES := *.c
 OUT := checker.exe
 
 .PHONY: all Makefile clean LICENSE run
