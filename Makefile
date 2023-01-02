@@ -1,24 +1,24 @@
 CC := gcc
 CFLAGS := -Wall \
-		-Wextra \
-		-Werror \
-		-Wno-unused \
-		-O3
-CFILES := *.c
-OUT := checker.exe
+		  -Wextra \
+		  -Werror \
+		  -Wno-unused \
+		  -O3
+OBJS := checkBatteryStatus.o main.o printMessages.o
+EXE := checker
 
-.PHONY: all Makefile clean LICENSE run
-all: *.o
-	${CC} ${^} -o ${OUT}
-	@rm -fr *.o
-	
-%.o: ${CFILES}
-	@${CC} --version
-	${CC} $^ ${CFLAGS} -c
+.PHONY: all clean run
+all: $(EXE)
+
+$(EXE): $(OBJS)
+	$(CC) $^ -o $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) $^ -c
 
 clean:
-	@rm -fr *.o *.out *.exe
+	@rm -fr $(EXE) $(OBJS)
 
 run:
 	@echo Executing program...
-	@./${OUT}
+	./$(EXE)
