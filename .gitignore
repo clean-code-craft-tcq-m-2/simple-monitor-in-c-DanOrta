@@ -1,1 +1,7 @@
 testchecker
+*.o
+*.exe
+*.out
+.vscode
+*.stackdump
+*.swp
